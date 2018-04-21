@@ -1,0 +1,106 @@
+//
+//  PrefixHeader.pch
+//  BaseProject
+//
+//  Created by 楼某人 on 2018/2/24.
+//  Copyright © 2018年 楼某人. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+
+#import "AppDelegate.h"
+
+/**
+ *  单例
+ */
+#import "Singleton.h"
+
+#import "UserInfo.h"
+
+#import "CommonModel.h"
+
+#import "UIViewExt.h"
+
+#import "XFNetManager.h"
+
+/**
+ *  集成CocoaLumberjack:DDLog取代NSLog
+ */
+#import <CocoaLumberjack.h>
+// 定义日志级别
+//DDLogLevelOff       = 0,//不显示日志
+//DDLogLevelError     = (DDLogFlagError),//只显示错误日志。
+//DDLogLevelWarning   = (DDLogLevelError   | DDLogFlagWarning),// 错误和警告日志
+//DDLogLevelInfo      = (DDLogLevelWarning | DDLogFlagInfo),   // 警告和信息文本日志
+//DDLogLevelDebug     = (DDLogLevelInfo    | DDLogFlagDebug),  // 信息和调试文本日志
+//DDLogLevelVerbose   = (DDLogLevelDebug   | DDLogFlagVerbose),// 调试详细文本日志
+//DDLogLevelAll       = NSUIntegerMax                          // 所有日志
+#ifdef DEBUG
+static const int ddLogLevel = DDLogLevelVerbose;
+#else
+static const int ddLogLevel = DDLogLevelError;
+#endif
+
+
+/**
+ *  pods三方库
+ */
+//#import <MLTransition.h>
+#import <Masonry.h>
+#import <BlocksKit.h>
+#import <BlocksKit+UIKit.h>
+#import <SDCycleScrollView.h>
+#import <IQKeyboardManager.h>
+#import <SVProgressHUD.h>
+#import <MBProgressHUD.h>
+#import <AFNetworking.h>
+#import <MJExtension.h>
+#import <AFNetworkActivityIndicatorManager.h>
+
+
+/**
+ *  分类
+ */
+#import "NSObject+WFZ_MBProgressHUD.h"
+#import "UIScrollView+WFZ_MJRefresh.h"
+#import "UIScrollView+WFZ_Extension.h"
+#import "UIButton+CountDown.h"
+#import "UIImageView+UIActivityIndicatorForSDWebImage.h"
+#import "UIImage+RTTint.h"
+
+#import "NSString+WFZ_Extension.h"
+#import "NSDate+WFZ_Extension.h"
+#import "NSArray+WFZ_Extension.h"
+
+#import "UIViewController+WFZ_Extension.h"
+#import "UIView+WFZ_Extension.h"
+#import "UILabel+WFZ_Extension.h"
+#import "UIImageView+WFZ_Extension.h"
+#import "UIButton+WFZ_Extension.h"
+#import "UITextField+WFZ_Extension.h"
+
+#import "UIImage+WFZ_Extension.h"
+#import "UIColor+WFZ_Extension.h"
+
+#import "UITableView+WFZ_Extension.h"
+#import "UITableViewCell+WFZ_Extension.h"
+
+/**
+ *  全局宏定义文件
+ */
+#import "API_Path.h"
+#import "Constants.h"
+#import "Enumeration.h"
+#import "Methods.h"
+#import "Notification.h"
+
+#import "BaseExtendVC.h"
+
+#endif /* PrefixHeader_pch */
